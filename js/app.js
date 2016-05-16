@@ -1,8 +1,11 @@
-var app = angular.module("oceanCity",[]);
+'use strict';
+
+var app = angular.module("oceanCity",["ngRoute"]);
 
 
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(function($routeProvider) {
+	// $locationProvider.html5Mode(true),
 	$routeProvider.when('/home', {
 		templateUrl: 'sources/home.html',
 		controller: 'HomeController'
@@ -10,4 +13,4 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'sources/menu.html',
 		controller: 'MenuController'
 	}).otherwise({redirectTo: '/home'});
-}]);
+});
